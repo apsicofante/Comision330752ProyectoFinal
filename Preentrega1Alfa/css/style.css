@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital@1&family=Roboto&display=swap');
+
+/**
+font-family: 'Roboto', sans-serif;
+font-family: 'Lato', sans-serif;
+**/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: rgb(238, 48, 48);
+    font-family: 'Roboto', sans-serif;
+}
+
+.spanHeader {
+    color: white;
+}
+
+.linkHeader{
+    list-style: none;
+}
+
+.navBar {
+    list-style: none;
+}
+
+.navBar li a {
+    text-decoration: none;
+    color: white;
+}
+
+.navBar li a:hover {
+    color: black;
+}
+
+footer {
+    background-image: url(../assets/img/fondo_negro_malla.jpg);
+    color: white;
+    font-family: 'Roboto', sans-serif;
+}
+
+.linkFooter {
+    list-style: none;
+}
+
+/**estilos del main gral**/
+
+h1 , h3 {
+    font-family: 'Roboto', sans-serif;
+}
+
+/**estilos nosotros**/
+
+.textoNosotros p {
+    font-family: 'Lato', sans-serif ;
+}
+
+/**estilos menu**/
+
+.textoMenu p {
+    font-family: 'Lato', sans-serif ;
+}
+
+/**estilos servicios**/
+
+.textoServicios p{
+    font-family: 'Lato', sans-serif ;
+}
