@@ -12,25 +12,58 @@ font-family: 'Lato', sans-serif;
 }
 
 header {
-    background-color: rgb(238, 48, 48);
+    background-color: rgb(223, 195, 195, 0.3);
     font-family: 'Roboto', sans-serif;
+    width: 100%;
 }
 
-.spanHeader {
+.containerHeaderGrid {
+    display: grid;    
+    height: 15%;
+    width: 100%;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas: 
+    "logo . redes reservas"
+    "logo . . ."
+    "logo . barra barra"
+    ;
+}
+
+.box-1{
+    grid-area:logo ;
+   
+}
+.box-2{
+    grid-area:redes 
+}
+.box-3{
+    grid-area:reservas ;
+}
+.box-4{
+    grid-area:barra ;
+}
+
+.telefonoReservas p{
     color: white;
 }
 
 .linkHeader{
     list-style: none;
+    display: flex;
+    gap: 15px;
 }
 
 .navBar {
     list-style: none;
+    display: flex;
+    gap: 20px;
 }
 
 .navBar li a {
     text-decoration: none;
     color: white;
+    font-size: 15px;
 }
 
 .navBar li a:hover {
@@ -43,7 +76,17 @@ footer {
     font-family: 'Roboto', sans-serif;
 }
 
+.containerFooter{
+    display: flex;
+    flex-direction: row;
+    height: 10%;
+    justify-content: space-around;
+    align-items: center;
+}
+
 .linkFooter {
+    display: flex;
+    gap: 20px;
     list-style: none;
 }
 
@@ -65,6 +108,10 @@ h1 , h3 {
     font-family: 'Lato', sans-serif ;
 }
 
+.banner {
+    background-image: url(../assets/img/menu1.jpg);
+    background-position: bottom;
+}
 /**estilos servicios**/
 
 .textoServicios p{
