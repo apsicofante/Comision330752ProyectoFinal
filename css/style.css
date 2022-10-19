@@ -92,7 +92,7 @@ footer {
 
 /**estilos del main gral**/
 
-h1 , h3 {
+h1 , h2 , h3 {
     font-family: 'Roboto', sans-serif;
 }
 
@@ -104,8 +104,18 @@ h1 , h3 {
 
 /**estilos menu**/
 
+.containerFlexMenu{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 54vh;
+
+}
+
 .textoMenu p {
     font-family: 'Lato', sans-serif ;
+    color: black;
+    text-shadow: 2px 2px rgb(221, 186, 186);
 }
 
 .banner {
