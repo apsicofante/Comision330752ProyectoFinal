@@ -17,7 +17,31 @@ header {
     width: 100%;
 }
 
-.containerHeaderGrid {
+/*(INICIO)Transformacion 3D en el logo del header, intenté darle un enfoque retro pero no me convence*/
+.logo3d {
+    position: relative;
+    height: 100px;
+    width: 100px;
+    border: 2px solid black;
+    perspective: 80px;
+}
+
+.logo3d a{
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    background-image: url(../assets/img/logo-80s.jpg);
+    border: 2px solid black;
+    transform-style: preserve-3d;
+}
+
+.logo3d a:hover {
+    transform: rotateX(35deg);
+}
+/*(FIN)Transformacion 3D en el logo del header*/
+
+
+.containerHeaderGrid { /*GRID*/
     display: grid;    
     height: 15%;
     width: 100%;
@@ -28,6 +52,10 @@ header {
     "logo . . ."
     "logo . barra barra"
     ;
+    justify-content: space-around;
+    justify-items: center;
+    align-items: center;
+
 }
 
 .box-1{
@@ -35,7 +63,9 @@ header {
    
 }
 .box-2{
-    grid-area:redes 
+    grid-area:redes ;
+    justify-self: center;
+    align-self: center;
 }
 .box-3{
     grid-area:reservas ;
@@ -76,7 +106,7 @@ footer {
     font-family: 'Roboto', sans-serif;
 }
 
-.containerFooter{
+.containerFooter{ /*FLEX*/
     display: flex;
     flex-direction: row;
     height: 10%;
@@ -96,10 +126,57 @@ h1 , h2 , h3 {
     font-family: 'Roboto', sans-serif;
 }
 
+/*estilos main index*/
+
+.gradient {
+    background: #C02425;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #F0CB35, #C02425);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #F0CB35, #C02425); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
 /**estilos nosotros**/
+
+.containerMainNosotrosGrid{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr );
+    grid-template-rows: repeat(5, 1fr );
+    grid-template-areas: 
+    "foto-3 foto-3 foto-3 foto-3 . ."
+    "foto-3 foto-3 foto-3 foto-3 textoNosotros textoNosotros"
+    "foto-3 foto-3 foto-3 foto-3 textoNosotros textoNosotros"
+    "foto-4 foto-4 foto-2 foto-2 textoNosotros textoNosotros"
+    "foto-4 foto-4 foto-2 foto-2 textoNosotros textoNosotros"
+    ;
+}
+
+.textoNosotros {
+    grid-area: textoNosotros;
+    align-content: center;
+    justify-self: center;
+}
+
+.foto-2 {
+    grid-area: foto-2 ;
+}
+.foto-3 {
+    grid-area: foto-3;
+}
+.foto-4 {
+    grid-area: foto-4;
+}
 
 .textoNosotros p {
     font-family: 'Lato', sans-serif ;
+    text-align: justify;
+    word-spacing: 5px;
+    font-size: 20px;
+}
+
+/**estilos radiostreaming**/
+.redesAudio{
+    display: flex;
+    gap: 20px
+    ;
 }
 
 /**estilos menu**/
@@ -108,22 +185,110 @@ h1 , h2 , h3 {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    height: 54vh;
+    height: 70vh;
 
+}
+
+.textoMenu div {
+    border: 2px solid rgb(66, 66, 66, 0.3);
+    border-radius: 5px;
+    background-color: rgb(66, 66, 66, 0.3);
+}
+
+section h1 {
+    display: flex;
+    justify-content: center;
 }
 
 .textoMenu p {
     font-family: 'Lato', sans-serif ;
     color: black;
-    text-shadow: 2px 2px rgb(221, 186, 186);
 }
 
 .banner {
     background-image: url(../assets/img/menu1.jpg);
     background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 /**estilos servicios**/
 
 .textoServicios p{
     font-family: 'Lato', sans-serif ;
+}
+
+/*responsive movil */
+
+@media (max-width: 576px) {
+    .containerFlexMenu{
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        justify-content: center;
+    }
+
+    .containerHeaderGrid { /*Tengo entendido que en la version movile solo va una columna pero no sabia como hacer el menu mas chico o como le llaman "Menu Hamburguesa" sin Bootstrap*/
+        display: grid;    
+        width: 100%;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        grid-template-areas: 
+        "logo  redes reservas"
+        "logo  . ."
+        "logo  barra barra"
+        ;
+        justify-content: space-around;
+        justify-items: center;
+        align-items: center;
+    
+    }
+    
+    .box-1{
+        grid-area:logo ;
+       
+    }
+    .box-2{
+        grid-area:redes ;
+    }
+    .box-3{
+        grid-area:reservas ;
+    }
+    .box-4{
+        grid-area:barra ;
+    }
+
+    .navBar {
+        gap: 8px;
+    }
+
+    .containerMainNosotrosGrid {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(5, 1fr);
+        grid-template-areas: 
+        "textoNosotros"
+        "textoNosotros"
+        "textoNosotros"
+        "foto-3"
+        "foto-3"
+        ;
+    }
+
+    .textoNosotros {
+        grid-area: textoNosotros;
+        display: flex;
+        align-content: center;
+        justify-content: center;
+    }
+    
+    .foto-2 {
+        display: none;
+    }
+    .foto-3 img {
+        width: 500px;
+        height: 300px;
+    }
+    .foto-4 {
+        display: none;
+    }
 }

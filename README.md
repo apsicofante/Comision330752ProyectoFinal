@@ -1,0 +1,1 @@
+<!--Realicé algunos cambios como Gradientes de fondo, transformacion 3D en logo del Header, apliqué Flexbox y Grid, repasé conceptos como Opacidad aplicada al header, y conformé una vista Dekstop y Movile con Media Quaries (me faltó aplicar una vista Tablet), me falta repasar muchos conceptos basicos y principalmente mejorar los estilos  -->
