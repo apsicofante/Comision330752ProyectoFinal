@@ -14,22 +14,27 @@ font-family: 'Lato', sans-serif;
 header {
     background-color: rgb(223, 195, 195, 0.3);
     font-family: 'Roboto', sans-serif;
-    width: 100%;
 }
 
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+   
+}
 /*(INICIO)Transformacion 3D en el logo del header, intenté darle un enfoque retro pero no me convence*/
 .logo3d {
     position: relative;
-    height: 100px;
-    width: 100px;
-    border: 2px solid black;
-    perspective: 80px;
+    height: 70px;
+    width: 70px;
+    perspective: 70px;
 }
 
 .logo3d a{
     position: absolute;
-    height: 100px;
-    width: 100px;
+    height: 70px;
+    width: 70px;
     background-image: url(../assets/img/logo-80s.jpg);
     border: 2px solid black;
     transform-style: preserve-3d;
@@ -40,10 +45,9 @@ header {
 }
 /*(FIN)Transformacion 3D en el logo del header*/
 
-
+/*
 .containerHeaderGrid { /*GRID*/
-    display: grid;    
-    height: 15%;
+    /*display: grid;    
     width: 100%;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(3, 1fr);
@@ -78,6 +82,7 @@ header {
     color: white;
 }
 
+/*
 .linkHeader{
     list-style: none;
     display: flex;
@@ -99,7 +104,7 @@ header {
 .navBar li a:hover {
     color: black;
 }
-
+*/
 footer {
     background-image: url(../assets/img/fondo_negro_malla.jpg);
     color: white;
@@ -116,7 +121,7 @@ footer {
 
 .linkFooter {
     display: flex;
-    gap: 20px;
+    gap: 40px;
     list-style: none;
 }
 
@@ -127,6 +132,14 @@ h1 , h2 , h3 {
 }
 
 /*estilos main index*/
+
+.slide {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.slide img{
+    height: 70vh;
+}
 
 .gradient {
     background: #C02425;  /* fallback for old browsers */
@@ -141,11 +154,11 @@ h1 , h2 , h3 {
     grid-template-columns: repeat(6, 1fr );
     grid-template-rows: repeat(5, 1fr );
     grid-template-areas: 
-    "foto-3 foto-3 foto-3 foto-3 . ."
+    "foto-3 foto-3 foto-3 foto-3 textoNosotros textoNosotros"
     "foto-3 foto-3 foto-3 foto-3 textoNosotros textoNosotros"
     "foto-3 foto-3 foto-3 foto-3 textoNosotros textoNosotros"
     "foto-4 foto-4 foto-2 foto-2 textoNosotros textoNosotros"
-    "foto-4 foto-4 foto-2 foto-2 textoNosotros textoNosotros"
+    "foto-4 foto-4 foto-2 foto-2 . ."
     ;
 }
 
@@ -157,12 +170,18 @@ h1 , h2 , h3 {
 
 .foto-2 {
     grid-area: foto-2 ;
+    align-content: center;
+    justify-content:  center;
 }
 .foto-3 {
     grid-area: foto-3;
+    align-content: center;
+    justify-content:  center;
 }
 .foto-4 {
     grid-area: foto-4;
+    align-content: center;
+    justify-content:  center;
 }
 
 .textoNosotros p {
@@ -172,20 +191,81 @@ h1 , h2 , h3 {
     font-size: 20px;
 }
 
-/**estilos radiostreaming**/
-.redesAudio{
-    display: flex;
-    gap: 20px
-    ;
+.foto-3{
+	-webkit-animation: scale-up-bottom 1.5s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+	        animation: scale-up-bottom 1.5s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 }
 
+.foto-4{
+	-webkit-animation: scale-up-bottom 2.0s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+	        animation: scale-up-bottom 2.0s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+.foto-2{
+	-webkit-animation: scale-up-bottom 2.5s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+	        animation: scale-up-bottom 2.5s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+@-webkit-keyframes scale-up-bottom {
+    0% {
+      -webkit-transform: scale(0.5);
+              transform: scale(0.5);
+      -webkit-transform-origin: 50% 100%;
+              transform-origin: 50% 100%;
+    }
+    100% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      -webkit-transform-origin: 50% 100%;
+              transform-origin: 50% 100%;
+    }
+  }
+  @keyframes scale-up-bottom {
+    0% {
+      -webkit-transform: scale(0.5);
+              transform: scale(0.5);
+      -webkit-transform-origin: 50% 100%;
+              transform-origin: 50% 100%;
+    }
+    100% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      -webkit-transform-origin: 50% 100%;
+              transform-origin: 50% 100%;
+    }
+  }
+
+/**estilos radiostreaming**/
+.radio{
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+}
+
+.radiosRetro{
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    align-content: center;
+    justify-content: center;
+
+}
+
+.redesAudio{
+    display: flex;
+    justify-content: center;
+    gap: 30px
+    ;
+}
+ul li {
+    list-style: none;
+}
 /**estilos menu**/
 
 .containerFlexMenu{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    height: 70vh;
+    height: 80vh;
 
 }
 
@@ -198,6 +278,23 @@ h1 , h2 , h3 {
 section h1 {
     display: flex;
     justify-content: center;
+}
+
+.textoMenu div h2{
+    text-align: center;
+}
+
+section:hover .agrandar {
+    transform: scale(1.5);
+}
+.desayuno {
+    transition: transform 500ms 0.5s;
+}
+.almuerzo {
+    transition: transform 500ms 0.5s;
+}
+.cena{
+    transition: transform 500ms 0.5s;
 }
 
 .textoMenu p {
@@ -226,22 +323,20 @@ section h1 {
         align-content: center;
         justify-content: center;
     }
-
-    .containerHeaderGrid { /*Tengo entendido que en la version movile solo va una columna pero no sabia como hacer el menu mas chico o como le llaman "Menu Hamburguesa" sin Bootstrap*/
-        display: grid;    
-        width: 100%;
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: repeat(3, 1fr);
-        grid-template-areas: 
-        "logo  redes reservas"
-        "logo  . ."
-        "logo  barra barra"
-        ;
-        justify-content: space-around;
-        justify-items: center;
-        align-items: center;
-    
+    .textoMenu {
+        height: 5vh;
+        display: flex;
+        flex-direction: column;
+        align-items: space-around;
     }
+
+    .desayuno .almuerzo .cena h2{
+        font-size: 10px;
+    }
+    h2 p{
+        font-size: 5px;
+    }
+    
     
     .box-1{
         grid-area:logo ;
@@ -268,7 +363,7 @@ section h1 {
         grid-template-areas: 
         "textoNosotros"
         "textoNosotros"
-        "textoNosotros"
+        "foto-3"
         "foto-3"
         "foto-3"
         ;
@@ -280,15 +375,38 @@ section h1 {
         align-content: center;
         justify-content: center;
     }
+    .textoNosotros p{
+        font-size: 13px;
+    }
     
     .foto-2 {
         display: none;
     }
+    .foto-3{
+        display: flex;
+        justify-content: center;
+        align-content: center;
+    }   
+    .foto-4 {
+        display: none;
+    }
+
     .foto-3 img {
         width: 500px;
         height: 300px;
     }
-    .foto-4 {
-        display: none;
+    .containerFooter{
+        justify-content: center;
+        gap: 40px;
+    }
+
+    .logoFooter img {
+    height: 50px;
+    width: 50px;
+    }
+
+    .redesFooter img {
+    height: 30px;
+    width: 30px;
     }
 }
