@@ -15,7 +15,24 @@ header {
     background-color: rgb(223, 195, 195, 0.3);
     font-family: 'Roboto', sans-serif;
 }
+/*Transicion en enlaces header*/
+.navbar-brand img:hover {
+    transform: scale(1.2);
+}
+.navbar-brand img{
+    transform: 600ms 0.2s;
+}
 
+.nav-link:hover {
+    transform: scale(1.2);
+}
+.nav-link {
+    transition: transform 600ms 0.2s;
+}
+
+.nav-link:hover {
+    color:  #C02425;
+}
 
 .container {
     display: flex;
@@ -23,7 +40,7 @@ header {
     justify-content: center;
    
 }
-/*(INICIO)Transformacion 3D en el logo del header, intenté darle un enfoque retro pero no me convence*/
+/*(INICIO)Transformacion 3D en el logo del footer, intenté darle un enfoque retro pero no me convence*/
 .logo3d {
     position: relative;
     height: 70px;
@@ -124,8 +141,18 @@ footer {
     gap: 40px;
     list-style: none;
 }
+.transformFooter:hover img{
+    transform: scale(1.2);
+}
+.transformFooter img{
+    transform: 600ms 0.2s;
+}
 
 /**estilos del main gral**/
+section h1 {
+    display: flex;
+    justify-content: center;
+}
 
 h1 , h2 , h3 {
     font-family: 'Roboto', sans-serif;
@@ -167,6 +194,10 @@ h1 , h2 , h3 {
     align-content: center;
     justify-self: center;
 }
+.foto-1 {
+    grid-area: foto-1;
+    display: none;
+}
 
 .foto-2 {
     grid-area: foto-2 ;
@@ -189,6 +220,11 @@ h1 , h2 , h3 {
     text-align: justify;
     word-spacing: 5px;
     font-size: 20px;
+}
+
+.foto-1{
+	-webkit-animation: scale-up-bottom 3.0s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+	        animation: scale-up-bottom 3.0s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 }
 
 .foto-3{
@@ -260,7 +296,7 @@ ul li {
     list-style: none;
 }
 /**estilos menu**/
-
+/*
 .containerFlexMenu{
     display: flex;
     justify-content: space-around;
@@ -268,16 +304,16 @@ ul li {
     height: 80vh;
 
 }
+*/
 
+.mainMenu {
+    height: 80vh;
+}
+/*
 .textoMenu div {
     border: 2px solid rgb(66, 66, 66, 0.3);
     border-radius: 5px;
     background-color: rgb(66, 66, 66, 0.3);
-}
-
-section h1 {
-    display: flex;
-    justify-content: center;
 }
 
 .textoMenu div h2{
@@ -301,7 +337,7 @@ section:hover .agrandar {
     font-family: 'Lato', sans-serif ;
     color: black;
 }
-
+*/
 .banner {
     background-image: url(../assets/img/menu1.jpg);
     background-position: bottom;
@@ -314,9 +350,66 @@ section:hover .agrandar {
     font-family: 'Lato', sans-serif ;
 }
 
-/*responsive movil */
+/*MEDIA QUARIES TABLET*/
+@media (max-width: 768px) {
+
+    /*responsive tablet nosotros*/
+    .containerMainNosotrosGrid {
+        display: grid;
+        width: 100vh;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        grid-template-areas: 
+        "foto-4 foto-4 textoNosotros"
+        "foto-2 foto-2 textoNosotros"
+        "foto-1 foto-1 textoNosotros"
+        "foto-3 foto-3 foto-3"
+        ;
+    }
+    .foto-1{
+        display: inline;
+        width: 400px;
+        height: 300px;
+    }
+
+    .foto-2 img{
+        width: 400px;
+        height: 300px;
+    }
+    .foto-3 img{
+        width: 700px;
+        height: 400px;
+    }
+    .foto-4 img{
+        width: 400px;
+        height: 300px;
+    }
+    .textoNosotros {
+        font-size: 15px;
+    }
+}
+
+
+/*MEDIA QUARIES MOVILE */
 
 @media (max-width: 576px) {
+    
+    .containerFooter{
+        justify-content: center;
+        gap: 40px;
+    }
+
+    .logoFooter img {
+    height: 50px;
+    width: 50px;
+    }
+
+    .redesFooter img {
+    height: 30px;
+    width: 30px;
+    }
+
+    /*responsive movile menu*/
     .containerFlexMenu{
         display: flex;
         flex-direction: column;
@@ -330,34 +423,11 @@ section:hover .agrandar {
         align-items: space-around;
     }
 
-    .desayuno .almuerzo .cena h2{
-        font-size: 10px;
-    }
-    h2 p{
-        font-size: 5px;
-    }
-    
-    
-    .box-1{
-        grid-area:logo ;
-       
-    }
-    .box-2{
-        grid-area:redes ;
-    }
-    .box-3{
-        grid-area:reservas ;
-    }
-    .box-4{
-        grid-area:barra ;
-    }
-
-    .navBar {
-        gap: 8px;
-    }
-
+   
+    /*responsive movile nosotros*/
     .containerMainNosotrosGrid {
         display: grid;
+        width: 100vh;
         grid-template-columns: 1fr;
         grid-template-rows: repeat(5, 1fr);
         grid-template-areas: 
@@ -378,7 +448,10 @@ section:hover .agrandar {
     .textoNosotros p{
         font-size: 13px;
     }
-    
+    .foto-1 {
+        display: none;
+    }
+
     .foto-2 {
         display: none;
     }
@@ -395,18 +468,12 @@ section:hover .agrandar {
         width: 500px;
         height: 300px;
     }
-    .containerFooter{
-        justify-content: center;
-        gap: 40px;
+    
+    /*responsive movile radiostreaming*/
+
+    .radioEnlace img {
+        height: 60px;
+        width: 60px;
     }
 
-    .logoFooter img {
-    height: 50px;
-    width: 50px;
-    }
-
-    .redesFooter img {
-    height: 30px;
-    width: 30px;
-    }
 }
