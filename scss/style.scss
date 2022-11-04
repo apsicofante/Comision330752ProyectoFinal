@@ -1,0 +1,479 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital@1&family=Roboto&display=swap');
+
+/**
+font-family: 'Roboto', sans-serif;
+font-family: 'Lato', sans-serif;
+**/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: rgb(223, 195, 195, 0.3);
+    font-family: 'Roboto', sans-serif;
+}
+/*Transicion en enlaces header*/
+.navbar-brand img:hover {
+    transform: scale(1.2);
+}
+.navbar-brand img{
+    transform: 600ms 0.2s;
+}
+
+.nav-link:hover {
+    transform: scale(1.2);
+}
+.nav-link {
+    transition: transform 600ms 0.2s;
+}
+
+.nav-link:hover {
+    color:  #C02425;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+   
+}
+/*(INICIO)Transformacion 3D en el logo del footer, intenté darle un enfoque retro pero no me convence*/
+.logo3d {
+    position: relative;
+    height: 70px;
+    width: 70px;
+    perspective: 70px;
+}
+
+.logo3d a{
+    position: absolute;
+    height: 70px;
+    width: 70px;
+    background-image: url(../assets/img/logo-80s.jpg);
+    border: 2px solid black;
+    transform-style: preserve-3d;
+}
+
+.logo3d a:hover {
+    transform: rotateX(35deg);
+}
+/*(FIN)Transformacion 3D en el logo del header*/
+
+/*
+.containerHeaderGrid { /*GRID*/
+    /*display: grid;    
+    width: 100%;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas: 
+    "logo . redes reservas"
+    "logo . . ."
+    "logo . barra barra"
+    ;
+    justify-content: space-around;
+    justify-items: center;
+    align-items: center;
+
+}
+
+.box-1{
+    grid-area:logo ;
+   
+}
+.box-2{
+    grid-area:redes ;
+    justify-self: center;
+    align-self: center;
+}
+.box-3{
+    grid-area:reservas ;
+}
+.box-4{
+    grid-area:barra ;
+}
+
+.telefonoReservas p{
+    color: white;
+}
+
+/*
+.linkHeader{
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+.navBar {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.navBar li a {
+    text-decoration: none;
+    color: white;
+    font-size: 15px;
+}
+
+.navBar li a:hover {
+    color: black;
+}
+*/
+footer {
+    background-image: url(../assets/img/fondo_negro_malla.jpg);
+    color: white;
+    font-family: 'Roboto', sans-serif;
+}
+
+.containerFooter{ /*FLEX*/
+    display: flex;
+    flex-direction: row;
+    height: 10%;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.linkFooter {
+    display: flex;
+    gap: 40px;
+    list-style: none;
+}
+.transformFooter:hover img{
+    transform: scale(1.2);
+}
+.transformFooter img{
+    transform: 600ms 0.2s;
+}
+
+/**estilos del main gral**/
+section h1 {
+    display: flex;
+    justify-content: center;
+}
+
+h1 , h2 , h3 {
+    font-family: 'Roboto', sans-serif;
+}
+
+/*estilos main index*/
+
+.slide {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.slide img{
+    height: 70vh;
+}
+
+.gradient {
+    background: #C02425;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #F0CB35, #C02425);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #F0CB35, #C02425); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+/**estilos nosotros**/
+
+.containerMainNosotrosGrid{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr );
+    grid-template-rows: repeat(5, 1fr );
+    grid-template-areas: 
+    "foto-3 foto-3 foto-3 foto-3 textoNosotros textoNosotros"
+    "foto-3 foto-3 foto-3 foto-3 textoNosotros textoNosotros"
+    "foto-3 foto-3 foto-3 foto-3 textoNosotros textoNosotros"
+    "foto-4 foto-4 foto-2 foto-2 textoNosotros textoNosotros"
+    "foto-4 foto-4 foto-2 foto-2 . ."
+    ;
+}
+
+.textoNosotros {
+    grid-area: textoNosotros;
+    align-content: center;
+    justify-self: center;
+}
+.foto-1 {
+    grid-area: foto-1;
+    display: none;
+}
+
+.foto-2 {
+    grid-area: foto-2 ;
+    align-content: center;
+    justify-content:  center;
+}
+.foto-3 {
+    grid-area: foto-3;
+    align-content: center;
+    justify-content:  center;
+}
+.foto-4 {
+    grid-area: foto-4;
+    align-content: center;
+    justify-content:  center;
+}
+
+.textoNosotros p {
+    font-family: 'Lato', sans-serif ;
+    text-align: justify;
+    word-spacing: 5px;
+    font-size: 20px;
+}
+
+.foto-1{
+	-webkit-animation: scale-up-bottom 3.0s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+	        animation: scale-up-bottom 3.0s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+.foto-3{
+	-webkit-animation: scale-up-bottom 1.5s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+	        animation: scale-up-bottom 1.5s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+.foto-4{
+	-webkit-animation: scale-up-bottom 2.0s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+	        animation: scale-up-bottom 2.0s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+.foto-2{
+	-webkit-animation: scale-up-bottom 2.5s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+	        animation: scale-up-bottom 2.5s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+@-webkit-keyframes scale-up-bottom {
+    0% {
+      -webkit-transform: scale(0.5);
+              transform: scale(0.5);
+      -webkit-transform-origin: 50% 100%;
+              transform-origin: 50% 100%;
+    }
+    100% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      -webkit-transform-origin: 50% 100%;
+              transform-origin: 50% 100%;
+    }
+  }
+  @keyframes scale-up-bottom {
+    0% {
+      -webkit-transform: scale(0.5);
+              transform: scale(0.5);
+      -webkit-transform-origin: 50% 100%;
+              transform-origin: 50% 100%;
+    }
+    100% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      -webkit-transform-origin: 50% 100%;
+              transform-origin: 50% 100%;
+    }
+  }
+
+/**estilos radiostreaming**/
+.radio{
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+}
+
+.radiosRetro{
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    align-content: center;
+    justify-content: center;
+
+}
+
+.redesAudio{
+    display: flex;
+    justify-content: center;
+    gap: 30px
+    ;
+}
+ul li {
+    list-style: none;
+}
+/**estilos menu**/
+/*
+.containerFlexMenu{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 80vh;
+
+}
+*/
+
+.mainMenu {
+    height: 80vh;
+}
+/*
+.textoMenu div {
+    border: 2px solid rgb(66, 66, 66, 0.3);
+    border-radius: 5px;
+    background-color: rgb(66, 66, 66, 0.3);
+}
+
+.textoMenu div h2{
+    text-align: center;
+}
+
+section:hover .agrandar {
+    transform: scale(1.5);
+}
+.desayuno {
+    transition: transform 500ms 0.5s;
+}
+.almuerzo {
+    transition: transform 500ms 0.5s;
+}
+.cena{
+    transition: transform 500ms 0.5s;
+}
+
+.textoMenu p {
+    font-family: 'Lato', sans-serif ;
+    color: black;
+}
+*/
+.banner {
+    background-image: url(../assets/img/menu1.jpg);
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+/**estilos servicios**/
+
+.textoServicios p{
+    font-family: 'Lato', sans-serif ;
+}
+
+/*MEDIA QUARIES TABLET*/
+@media (max-width: 768px) {
+
+    /*responsive tablet nosotros*/
+    .containerMainNosotrosGrid {
+        display: grid;
+        width: 100vh;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        grid-template-areas: 
+        "foto-4 foto-4 textoNosotros"
+        "foto-2 foto-2 textoNosotros"
+        "foto-1 foto-1 textoNosotros"
+        "foto-3 foto-3 foto-3"
+        ;
+    }
+    .foto-1{
+        display: inline;
+        width: 400px;
+        height: 300px;
+    }
+
+    .foto-2 img{
+        width: 400px;
+        height: 300px;
+    }
+    .foto-3 img{
+        width: 700px;
+        height: 400px;
+    }
+    .foto-4 img{
+        width: 400px;
+        height: 300px;
+    }
+    .textoNosotros {
+        font-size: 15px;
+    }
+}
+
+
+/*MEDIA QUARIES MOVILE */
+
+@media (max-width: 576px) {
+    
+    .containerFooter{
+        justify-content: center;
+        gap: 40px;
+    }
+
+    .logoFooter img {
+    height: 50px;
+    width: 50px;
+    }
+
+    .redesFooter img {
+    height: 30px;
+    width: 30px;
+    }
+
+    /*responsive movile menu*/
+    .containerFlexMenu{
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        justify-content: center;
+    }
+    .textoMenu {
+        height: 5vh;
+        display: flex;
+        flex-direction: column;
+        align-items: space-around;
+    }
+
+   
+    /*responsive movile nosotros*/
+    .containerMainNosotrosGrid {
+        display: grid;
+        width: 100vh;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(5, 1fr);
+        grid-template-areas: 
+        "textoNosotros"
+        "textoNosotros"
+        "foto-3"
+        "foto-3"
+        "foto-3"
+        ;
+    }
+
+    .textoNosotros {
+        grid-area: textoNosotros;
+        display: flex;
+        align-content: center;
+        justify-content: center;
+    }
+    .textoNosotros p{
+        font-size: 13px;
+    }
+    .foto-1 {
+        display: none;
+    }
+
+    .foto-2 {
+        display: none;
+    }
+    .foto-3{
+        display: flex;
+        justify-content: center;
+        align-content: center;
+    }   
+    .foto-4 {
+        display: none;
+    }
+
+    .foto-3 img {
+        width: 500px;
+        height: 300px;
+    }
+    
+    /*responsive movile radiostreaming*/
+
+    .radioEnlace img {
+        height: 60px;
+        width: 60px;
+    }
+
+}

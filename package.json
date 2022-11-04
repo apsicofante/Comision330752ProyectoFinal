@@ -1,0 +1,25 @@
+{
+  "name": "preentrega1alfa",
+  "version": "1.0.0",
+  "description": "<!--Realicé algunos cambios como Gradientes de fondo, transformacion 3D en logo del Footer, apliqué Flexbox y Grid, repasé conceptos como Opacidad aplicada al header, y conformé una vista Dekstop y Movile con Media Quaries (me faltó aplicar una vista Tablet), me falta repasar muchos conceptos basicos y principalmente mejorar los estilos  -->\r <!--Aplique bootstrap para una barra de navegacion responsive, tambien incluí Carrusel y Acordeon y mejoré Media Quaries para version tablet y movile, realicé transiciones en enlaces del header y footer>",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-css":"node-sass --include-path scss scss/style.scss css/style.css",
+    "watch-css":"nodemon -e scss -x \"npm run build-css\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/apsicofante/Comision330752daEntrega.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/apsicofante/Comision330752daEntrega/issues"
+  },
+  "homepage": "https://github.com/apsicofante/Comision330752daEntrega#readme",
+  "devDependencies": {
+    "node-sass": "^7.0.3",
+    "nodemon": "^2.0.20"
+  }
+}
