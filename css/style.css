@@ -422,7 +422,9 @@ section:hover .agrandar {
         flex-direction: column;
         align-items: space-around;
     }
-
+    .movileMenu{
+        display: none;
+    }
    
     /*responsive movile nosotros*/
     .containerMainNosotrosGrid {
