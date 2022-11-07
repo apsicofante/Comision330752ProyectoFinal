@@ -20,7 +20,7 @@ header {
     transform: scale(1.2);
 }
 .navbar-brand img{
-    transform: 600ms 0.2s;
+    transition: 600ms 0.2s;
 }
 
 .nav-link:hover {
@@ -145,7 +145,7 @@ footer {
     transform: scale(1.2);
 }
 .transformFooter img{
-    transform: 600ms 0.2s;
+    transition: 600ms 0.2s;
 }
 
 /**estilos del main gral**/
@@ -172,7 +172,7 @@ h1 , h2 , h3 {
     background: #C02425;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to bottom, #F0CB35, #C02425);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to bottom, #F0CB35, #C02425); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+    height: 100%;
 }
 /**estilos nosotros**/
 
@@ -296,7 +296,6 @@ ul li {
     list-style: none;
 }
 /**estilos menu**/
-/*
 .containerFlexMenu{
     display: flex;
     justify-content: space-around;
@@ -304,12 +303,13 @@ ul li {
     height: 80vh;
 
 }
-*/
-
-.mainMenu {
-    height: 80vh;
+.movileMenu{
+    display: none;
 }
-/*
+.mainMenu {
+    height: 80%;
+}
+
 .textoMenu div {
     border: 2px solid rgb(66, 66, 66, 0.3);
     border-radius: 5px;
@@ -320,24 +320,24 @@ ul li {
     text-align: center;
 }
 
-section:hover .agrandar {
-    transform: scale(1.5);
+.agrandar:hover {
+    transform: scale(1.3);
 }
 .desayuno {
-    transition: transform 500ms 0.5s;
+    transition: transform 800ms 0.1s;
 }
 .almuerzo {
-    transition: transform 500ms 0.5s;
+    transition: transform 800ms 0.1s;
 }
 .cena{
-    transition: transform 500ms 0.5s;
+    transition: transform 800ms 0.1s;
 }
 
 .textoMenu p {
     font-family: 'Lato', sans-serif ;
     color: black;
 }
-*/
+
 .banner {
     background-image: url(../assets/img/menu1.jpg);
     background-position: bottom;
@@ -410,11 +410,12 @@ section:hover .agrandar {
     }
 
     /*responsive movile menu*/
+    .movileMenu {
+        display: inline;
+    }
+
     .containerFlexMenu{
-        display: flex;
-        flex-direction: column;
-        align-content: center;
-        justify-content: center;
+        display: none;
     }
     .textoMenu {
         height: 5vh;
@@ -422,9 +423,7 @@ section:hover .agrandar {
         flex-direction: column;
         align-items: space-around;
     }
-    .movileMenu{
-        display: none;
-    }
+
    
     /*responsive movile nosotros*/
     .containerMainNosotrosGrid {
