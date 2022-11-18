@@ -562,24 +562,17 @@ ul li {
         font-size: 25px;
     }
     /*responsive movile menu*/
-    .movileMenu {
-        display: inline;
-    }
-
     .containerFlexMenu{
-        display: none;
-    }
-    .textoMenu {
-        height: 5vh;
-        display: flex;
         flex-direction: column;
-        align-items: space-around;
+        align-items: center;
+        justify-content: space-between;
+        height: max-content;
     }
-
-    button {
-        display: flex;
-        justify-content: center;
-    }
+   .textoMenu div {
+    width: 290px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+   }
     /*responsive movile nosotros*/
     .containerMainNosotrosGrid {
         display: grid;
