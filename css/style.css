@@ -53,8 +53,9 @@ header {
     position: absolute;
     height: 70px;
     width: 70px;
-    background-image: url(../assets/img/logo-80s.jpg);
-    border: 2px solid black;
+    background-image: url(../assets/img/logo-80s\ \(1\).png);
+    background-repeat: no-repeat;
+    background-size: cover;
     transform-style: preserve-3d;
 }
 
@@ -185,7 +186,8 @@ h2 , h3 {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: bottom;
-    height: 100%;
+    height: max-content;
+    width: 100%;
 }
 
 .bannerBienvenida{
@@ -336,7 +338,112 @@ h2 , h3 {
               transform-origin: 50% 100%;
     }
   }
+/**estilos sucursales | franquicias**/
 
+.sucursales {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 40px;
+}
+h5 {
+    color: black;
+    text-decoration: underline;
+}
+h4 {
+    color: black;
+    text-align: center;
+}
+
+.franquiciaCartel{
+    color: black;
+    text-shadow: 2px 2px 5px rgb(255, 255, 255);
+}
+
+.traslacion {
+    width: 600px;
+    border: none;
+    background-color: none;
+}
+.traslacion:hover .cajaSucursales{
+    transform: translateX(400px);
+}
+.cajaSucursales {
+    width: 280px;
+    transition: transform 2s ease-out;
+    transition-delay: 1.5s;
+}
+.franquicia{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 50px;
+}
+aside{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.atencion {
+    -webkit-animation: vibrate-1 0.8s linear infinite both;
+    animation: vibrate-1 0.8s linear infinite both;
+}
+.atencion a {
+    text-decoration: none;
+    color:white;
+    font-size: 20px;
+}
+@-webkit-keyframes vibrate-1 {
+    0% {
+      -webkit-transform: translate(0);
+              transform: translate(0);
+    }
+    20% {
+      -webkit-transform: translate(-2px, 2px);
+              transform: translate(-2px, 2px);
+    }
+    40% {
+      -webkit-transform: translate(-2px, -2px);
+              transform: translate(-2px, -2px);
+    }
+    60% {
+      -webkit-transform: translate(2px, 2px);
+              transform: translate(2px, 2px);
+    }
+    80% {
+      -webkit-transform: translate(2px, -2px);
+              transform: translate(2px, -2px);
+    }
+    100% {
+      -webkit-transform: translate(0);
+              transform: translate(0);
+    }
+  }
+  @keyframes vibrate-1 {
+    0% {
+      -webkit-transform: translate(0);
+              transform: translate(0);
+    }
+    20% {
+      -webkit-transform: translate(-2px, 2px);
+              transform: translate(-2px, 2px);
+    }
+    40% {
+      -webkit-transform: translate(-2px, -2px);
+              transform: translate(-2px, -2px);
+    }
+    60% {
+      -webkit-transform: translate(2px, 2px);
+              transform: translate(2px, 2px);
+    }
+    80% {
+      -webkit-transform: translate(2px, -2px);
+              transform: translate(2px, -2px);
+    }
+    100% {
+      -webkit-transform: translate(0);
+              transform: translate(0);
+    }
+  }
 /**estilos radiostreaming**/
 .radio{
     display: flex;
@@ -374,10 +481,10 @@ ul li {
 .movileMenu{
     display: none;
 }
-.mainMenu {
+/*.mainMenu {
     height: 80%;
 }
-
+*/
 .textoMenu div {
     border: 2px solid rgb(66, 66, 66, 0.3);
     border-radius: 5px;
@@ -577,7 +684,7 @@ ul li {
     .containerMainNosotrosGrid {
         display: grid;
         width: 100%;
-        grid-template-columns: 1fr;
+        grid-template-columns: 1 fr;
         grid-template-rows: repeat(5, 1fr);
         grid-template-areas: 
         "textoNosotros"
@@ -595,7 +702,8 @@ ul li {
         justify-content: center;
     }
     .textoNosotros p{
-        font-size: 13px;
+        font-size: 11px;
+        text-align: justify;
     }
     .foto-1 {
         display: none;
@@ -606,6 +714,7 @@ ul li {
     }
     .foto-3{
         display: flex;
+        justify-items: center;
         justify-content: center;
         align-content: center;
     }   
@@ -614,15 +723,46 @@ ul li {
     }
 
     .foto-3 img {
-        width: 500px;
-        height: 300px;
+        width: 400px;
     }
-    
+    /*responsive movile franquicias&sucursales*/
+    .sucursales {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+    }
+    .franquicia {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    aside {
+        margin-top: 30px;
+    }
+    aside a {
+        font-size: 12px;
+    }
+    .centrar {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+    .traslacion{
+        width: 100%;
+    }
+    .traslacion:hover .cajaSucursales{
+        transform:none;
+    }
     /*responsive movile radiostreaming*/
 
     .radioEnlace img {
         height: 60px;
         width: 60px;
+    }
+
+    .logo3d img{
+        display: none;
     }
 
 }
